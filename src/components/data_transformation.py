@@ -83,11 +83,14 @@ class DataTransformation:
             preprocessing_obj = self.get_data_transformation_object()
 
             target_column_name = 'price'
-            drop_columns = [target_column_name,'id']
-
+            drop_columns = [target_column,'id']
+            
+            # Dividing the dataset into independent and dependent features 
+            ## Training Data
             input_feature_train_df = train_df.drop(columns=drop_columns,axis=1)
             target_feature_train_df=train_df[target_column_name]
 
+            #test Data 
             input_feature_test_df=test_df.drop(columns=drop_columns,axis=1)
             target_feature_test_df=test_df[target_column_name]
             
